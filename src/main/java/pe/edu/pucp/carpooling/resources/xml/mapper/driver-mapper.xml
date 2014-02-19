@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="pe.edu.pucp.carpooling.mapper.DriverMapper">
+
+<!--    <resultMap id="tripResultMap" type ="TripBean">
+        <id column="idTripDay" property="idTripDay" />
+        <result column="idDistrit" property="idDistrit"/>
+        <result column="idUniversity" property="idUniversity"/>
+        <result column="idCar" property="idCar"/>
+        <result column="numPersonAboard" property="numPersonAboard"/>
+        <result column="dayTrip" property="dayTrip"/>
+        <result column="hourTrip" property="hourTrip"/>
+        <result column="pricePerson" property="pricePerson"/>
+        <result column="placeParking" property="placeParking"/>
+        <result column="numPersonCapacity" property="numPersonCapacity"/>
+    </resultMap>-->
+    
+    
+    <insert id="saveDriver"  >
+        INSERT INTO tbl_car
+        VALUES (#{idCar},#{idUser},#{descCar},#{bigCar});
+    </insert>
+    
+    <select id="getDataSavedDriver" resultType="DriverBean">
+        SELECT *
+        FROM tbl_car
+        WHERE idUser=#{idUser};
+    </select>
+    
+    <select id="getDriverByIDCar" resultType="DriverBean">
+        SELECT *
+        FROM tbl_car
+        WHERE idCar=#{idCar};
+    </select>
+    
+    <select id="getLastConfigurationTripDriver" resultType="TripBean">
+        SELECT * 
+        FROM tbl_tripday
+        WHERE idCar=#{idCar}
+        ORDER BY idTripDay DESC;
+        
+    </select>
+    
+</mapper>
