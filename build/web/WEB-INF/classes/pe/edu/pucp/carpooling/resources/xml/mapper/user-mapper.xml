@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="pe.edu.pucp.carpooling.mapper.UserMapper">
+
+    <select id="verifyUser" resultType="UserBean"  >
+        SELECT *
+        FROM tbl_user
+        WHERE idUser=#{idUser} AND password=MD5(#{password});
+    </select>
+    
+    <select id="getCodeFlag" resultType="Integer">
+        
+        SELECT userMailVerify
+        FROM tbl_user
+        WHERE idUser=#{idUser};
+        
+    </select>
+    
+    
+    <select id="verifyCodeMail" resultType="String">
+        
+        SELECT codeMail
+        FROM tbl_user
+        WHERE idUser=#{idUser};
+        
+    </select>
+    
+    
+    
+    <!--Metodo para verificar si el id de usuario ya ha sido registrado.
+        Se comprueba a través de Jackson.
+    -->
+    <select id="verifyIdUserInRegister" resultType="UserBean"  >
+        SELECT *
+        FROM tbl_user
+        WHERE idUser=#{idUser};
+    </select>
+    
+    <select id="verifyIdCarInRegister" resultType="String">
+        SELECT idCar
+        FROM tbl_car
+        WHERE idCar=#{idCar};
+    </select>
+    
+    <insert id="addUser" >
+        INSERT INTO tbl_user
+        VALUES(#{idUser},#{name},#{app},#{apm},MD5(#{password}),
+               #{registerDay},#{idCar},#{phoneContact},#{idEntity},#{idUserIntoEntity},#{destinyPointMap},
+               #{idDistrit},0,#{codeMail});
+    </insert>
+    
+    <select id="getEndPositionMap" resultType="String">
+        SELECT destinyPointMap
+        FROM tbl_user
+        WHERE idUser=#{idUser}
+        
+    </select>
+    
+    <select id="getCarByUser" resultType="String">
+        SELECT * FROM tbl_car
+        WHERE idUser=#{idUser};
+    </select>
+    
+    <select id="getUserByCar" resultType="String">
+        SELECT idUser FROM tbl_car
+        WHERE idCar=#{idCar}
+        
+    </select>
+    
+    <select id="getUserById" resultType="UserBean">
+        SELECT *
+        FROM tbl_user
+        WHERE idUser=#{idUser}
+    </select>
+    
+     <select id="getCar" resultType="CarBean">
+        SELECT *
+        FROM tbl_car
+        WHERE idUser=#{idUser}
+    </select>
+    
+    <update id="updateUserAddCar">
+        
+        UPDATE tbl_user
+        SET name=#{name},app=#{app},apm=#{apm},idCar=#{idCar},phoneContact=#{phoneContact},
+        idUserIntoEntity=#{userIntoEntity},destinyPointMap=#{destinyPointMap},idDistrit=#{idDistrit}
+        WHERE (idUser=#{idUser})
+        
+    </update>
+    
+    <update id="updateUser">
+        
+        UPDATE tbl_user
+        SET name=#{name},app=#{app},apm=#{apm},phoneContact=#{phoneContact},idUserIntoEntity=#{userIntoEntity}
+        WHERE (idUser=#{idUser});
+        
+    </update>
+    
+    <update id="updateUserPassword">
+        
+        UPDATE tbl_user
+        SET password=MD5(#{password})
+        WHERE (idUser=#{idUser})
+        
+    </update>
+    
+    <select id="recoverPassword" resultType="String">
+        
+        SELECT password
+        FROM tbl_user
+        WHERE idUser=#{idUser};
+        
+    </select>
+    
+    <select id="getFlagVerify" resultType="Integer">
+        
+        SELECT userMailVerify
+        FROM tbl_user
+        WHERE idUser=#{idUser};
+        
+    </select>
+    
+    <update id="setUserMailVerified">
+        
+        UPDATE tbl_user
+        SET userMailVerify=1
+        WHERE (idUser=#{idUser})
+        
+    </update>
+    
+</mapper>
