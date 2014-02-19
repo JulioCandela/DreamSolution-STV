@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="pe.edu.pucp.carpooling.mapper.DistritMapper">
+
+    <resultMap id="distritoMap" type ="DistritBean">
+        <id column="idDistrit" property="idDistrit" />
+        <result column="nameDistrit" property="nameDistrit"/>
+    </resultMap>
+    
+    
+    <select id="getAllDistrit"  resultMap="distritoMap">
+        SELECT * FROM tbl_Distrit
+    </select>
+    
+    <select id="getNameDistritById" resultType="String">
+        SELECT NAMEDISTRIT FROM tbl_Distrit
+        WHERE idDistrit=#{idDistrit}
+    </select>
+</mapper>
