@@ -141,7 +141,7 @@ body
 	width:95%;
 	overflow-y:scroll;
 	position:relative;
-	top:180px;
+	top:160px;
 	left:20px;
 
 }
@@ -162,6 +162,46 @@ body
 {
 	text-align:center;
 }
+
+#search-advanced
+{
+	border: 1px solid white;
+	top:170px;
+	position:relative;
+	margin:auto auto 50px auto;
+	width:90%;
+	
+}
+
+#search-advanced td
+{
+	text-align:center;
+	padding-top:10px;
+	
+}
+
+#search-advanced td input[type='text']
+{
+	width:80px;
+}
+
+input[type='button']
+{
+	width:100px;
+	height:40px;
+	text-align:center;
+	vertical-align:middle;
+	-webkit-border-radius: 10px; 
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	border: 0 none; 
+}
+
+input[type='button']:hover
+{
+	background:orange;
+}
+
 
 
 
