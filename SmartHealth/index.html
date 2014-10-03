@@ -9,22 +9,8 @@ and open the template in the editor.
 		<link rel="stylesheet" type="text/css" href="css/styles.css"/>
 		<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 		<script type="text/javascript" src="js/rating.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/rating.css" />
-		
-		<script type="text/javascript">
-		$(document).ready(function() {
-			$('#star1').rating('votar.php', {maxvalue: 5, curvalue:1, id:20});
-			$('#star2').rating('votar.php', {maxvalue: 5, curvalue:1, id:20});
-			$('#star3').rating('votar.php', {maxvalue: 5, curvalue:1, id:20});
-			$('#star4').rating('votar.php', {maxvalue: 5, curvalue:1, id:20});
-			$('#star5').rating('votar.php', {maxvalue: 5, curvalue:1, id:20});
-			$('#star6').rating('votar.php', {maxvalue: 5, curvalue:1, id:20});
-			$('#star7').rating('votar.php', {maxvalue: 5, curvalue:1, id:20});
-			$('#star8').rating('votar.php', {maxvalue: 5, curvalue:1, id:20});
-			$('#star9').rating('votar.php', {maxvalue: 5, curvalue:1, id:20});
-		});
-		</script>
-		
         <meta charset="UTF-8">
         <title></title>
     </head>
@@ -81,7 +67,7 @@ and open the template in the editor.
                                 <table>
                                     <tr>
                                         <td>
-                                            <h3 id="titulo-data">Recetas Sugeridas</h3>
+                                            <h3>Recetas Sugeridas</h3>
                                         </td>
                                         <td>
                                             <form id="search-box" action="/search" method="get">
@@ -91,180 +77,9 @@ and open the template in the editor.
                                     </tr>
                                 </table>
                             </div>
-							
-							<div id="search-advanced">
-								<table>
-									<tr>
-										<td>
-											Ordenar por:
-										</td>
-										<td>
-											<input type="button" value="Mejor&#x00A;Valoradas"/>
-										</td>
-										<td>
-											<input type="button" value="Recientes"/>
-										</td>
-										<td>
-											<input type="button" value="Tiempo de&#x00A;elaboración"/>
-										</td>
-										<td>
-											<input type="button" value="Dificultad"/>
-										</td>
-									</tr>
-									<tr>
-										<td width=100>
-											Rango Calórico
-										</td>
-										<td>
-											<input type="text" placeholder="Valor mínimo"/>
-										</td>
-										<td>
-											<input type="text" placeholder="Valor máximo"/>
-										</td>
-										<td>
-											Categorías
-										</td>
-										<td>
-											<table>
-											<tr>
-												<td>
-													<input type="button" value="Entradas"/>
-												</td>
-												<td>
-													<input type="button" value="Postres"/>
-												</td>
-											</tr>
-											<tr>
-												<td>
-													<input type="button" value="Sopas"/>
-												</td>
-												<td>
-													<input type="button" value="Vegetariano"/>
-												</td>
-											</tr>
-											</table>
-										</td>
-									</tr>
-								</table>
-							</div>
 
-                            <div class="resultado-recetas">
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <div class="detalle-receta">
-                                                <div id="star1" class="rating">&nbsp;</div>
-                                                <div class="texto-detalle">
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                                        Nulla quam velit, vulputate eu pharetra nec, 
-                                                        mattis ac neque. Duis vulputate commodo lectus.
-                                                        </p>
-                                                </div>
-                                                <div class="imagen-detalle"><img src="images/ensalada.jpg"></div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="detalle-receta">
-                                                <div id="star2" class="rating">&nbsp;</div>
-                                                <div class="texto-detalle">
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                                    Nulla quam velit, vulputate eu pharetra nec, 
-                                                    mattis ac neque. Duis vulputate commodo lectus.
-                                                    </p>
-                                                </div>
-                                                <div class="imagen-detalle"><img src="images/ensalada.jpg"></div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="detalle-receta">
-                                                <div id="star3" class="rating">&nbsp;</div>
-                                                <div class="texto-detalle">
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                                    Nulla quam velit, vulputate eu pharetra nec, 
-                                                    mattis ac neque. Duis vulputate commodo lectus.
-                                                    </p>
-                                                </div>
-                                                <div class="imagen-detalle"><img src="images/ensalada.jpg"></div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="detalle-receta">
-                                                <div id="star4" class="rating">&nbsp;</div>
-                                                <div class="texto-detalle">
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                                    Nulla quam velit, vulputate eu pharetra nec, 
-                                                    mattis ac neque. Duis vulputate commodo lectus.
-                                                    </p>
-                                                </div>
-                                                <div class="imagen-detalle"><img src="images/ensalada.jpg"></div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="detalle-receta">
-                                                <div id="star5" class="rating">&nbsp;</div>
-                                                <div class="texto-detalle">
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                                    Nulla quam velit, vulputate eu pharetra nec, 
-                                                    mattis ac neque. Duis vulputate commodo lectus.
-                                                    </p>
-                                                </div>
-                                                <div class="imagen-detalle"><img src="images/ensalada.jpg"></div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="detalle-receta">
-                                                <div id="star6" class="rating">&nbsp;</div>
-                                                <div class="texto-detalle">
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                                    Nulla quam velit, vulputate eu pharetra nec, 
-                                                    mattis ac neque. Duis vulputate commodo lectus.
-                                                    </p>
-                                                </div>
-                                                <div class="imagen-detalle"><img src="images/ensalada.jpg"></div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="detalle-receta">
-                                                <div id="star7" class="rating">&nbsp;</div>
-                                                <div class="texto-detalle">
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                                    Nulla quam velit, vulputate eu pharetra nec, 
-                                                    mattis ac neque. Duis vulputate commodo lectus.
-                                                    </p>
-                                                </div>
-                                                <div class="imagen-detalle"><img src="images/ensalada.jpg"></div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="detalle-receta">
-                                                <div id="star8" class="rating">&nbsp;</div>
-                                                <div class="texto-detalle">
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                                    Nulla quam velit, vulputate eu pharetra nec, 
-                                                    mattis ac neque. Duis vulputate commodo lectus.
-                                                    </p>
-                                                </div>
-                                                <div class="imagen-detalle"><img src="images/ensalada.jpg"></div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="detalle-receta">
-                                                <div id="star9" class="rating">&nbsp;</div>
-                                                <div class="texto-detalle">
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                                        Nulla quam velit, vulputate eu pharetra nec, 
-                                                        mattis ac neque. Duis vulputate commodo lectus.
-                                                        </p>
-                                                </div>
-                                                <div class="imagen-detalle"><img src="images/ensalada.jpg"></div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </table>
+                            <div id="resultadoRecetas" class="resultado-recetas">
+                                
                             </div>
                         </div>	
                     </td>
