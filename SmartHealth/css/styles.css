@@ -170,19 +170,19 @@ body
 	position:relative;
 	margin:auto auto 50px auto;
 	width:90%;
-	
+	display:none;
 }
 
 #search-advanced td
 {
-	text-align:center;
+	text-align:left;
 	padding-top:10px;
 	
 }
 
 #search-advanced td input[type='text']
 {
-	width:80px;
+	width:40px;
 }
 
 input[type='button']

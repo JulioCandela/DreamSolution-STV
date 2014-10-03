@@ -9,6 +9,7 @@ and open the template in the editor.
 		<link rel="stylesheet" type="text/css" href="css/styles.css"/>
 		<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 		<script type="text/javascript" src="js/rating.js"></script>
+                <script type="text/javascript" src="js/searchadvanced.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/rating.css" />
 		
 		<script type="text/javascript">
@@ -84,7 +85,7 @@ and open the template in the editor.
                                             <h3 id="titulo-data">Recetas Sugeridas</h3>
                                         </td>
                                         <td>
-                                            <form id="search-box" action="/search" method="get">
+                                            <form id="search-box" action="javascript:mostrarAvanzada()" method="get">
                                                     <input type="text" name="q" size="40" placeholder="Buscar..." />
                                             </form>
                                         </td>
@@ -92,61 +93,59 @@ and open the template in the editor.
                                 </table>
                             </div>
 							
-							<div id="search-advanced">
-								<table>
-									<tr>
-										<td>
-											Ordenar por:
-										</td>
-										<td>
-											<input type="button" value="Mejor&#x00A;Valoradas"/>
-										</td>
-										<td>
-											<input type="button" value="Recientes"/>
-										</td>
-										<td>
-											<input type="button" value="Tiempo de&#x00A;elaboración"/>
-										</td>
-										<td>
-											<input type="button" value="Dificultad"/>
-										</td>
-									</tr>
-									<tr>
-										<td width=100>
-											Rango Calórico
-										</td>
-										<td>
-											<input type="text" placeholder="Valor mínimo"/>
-										</td>
-										<td>
-											<input type="text" placeholder="Valor máximo"/>
-										</td>
-										<td>
-											Categorías
-										</td>
-										<td>
-											<table>
-											<tr>
-												<td>
-													<input type="button" value="Entradas"/>
-												</td>
-												<td>
-													<input type="button" value="Postres"/>
-												</td>
-											</tr>
-											<tr>
-												<td>
-													<input type="button" value="Sopas"/>
-												</td>
-												<td>
-													<input type="button" value="Vegetariano"/>
-												</td>
-											</tr>
-											</table>
-										</td>
-									</tr>
-								</table>
-							</div>
+                                <div id="search-advanced">
+                                        <table>
+                                                <tr>
+                                                        <td width="100">
+                                                                Ordenar por:
+                                                        </td>
+                                                        <td width="80">
+                                                                <input type="button" value="Mejor&#x00A;Valoradas"/>
+                                                        </td>
+                                                        <td width="80">
+                                                                <input type="button" value="Recientes"/>
+                                                        </td>
+                                                        <td width="80">
+                                                                <input type="button" value="Tiempo de&#x00A;elaboración"/>
+                                                        </td>
+                                                        <td width="80">
+                                                                <input type="button" value="Dificultad"/>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>
+                                                                Rango Calórico
+                                                        </td>
+                                                        <td width="2000">
+                                                                <input type="text" placeholder="Min"/>
+                                                                <input type="text" placeholder="Max"/>
+                                                        </td>
+                                                        <td>
+                                                                Categorías
+                                                        </td>
+                                                        <td>
+                                                                <table>
+                                                                <tr>
+                                                                        <td width="130">
+                                                                                <input type="button" value="Entradas"/>
+                                                                        </td>
+                                                                        <td>
+                                                                                <input type="button" value="Postres"/>
+                                                                        </td>
+                                                                </tr>
+                                                                <tr>
+                                                                        <td>
+                                                                                <input type="button" value="Sopas"/>
+                                                                        </td>
+                                                                        <td>
+                                                                                <input type="button" value="Vegetariano"/>
+                                                                        </td>
+                                                                </tr>
+                                                                </table>
+                                                        </td>
+                                                </tr>
+                                        </table>
+                                </div>
 
                             <div class="resultado-recetas">
                                 <table>
