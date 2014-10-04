@@ -6,14 +6,26 @@ and open the template in the editor.
 -->
 <html>
     <head>
-		<link rel="stylesheet" type="text/css" href="css/styles.css"/>
-		<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
-		<script type="text/javascript" src="js/rating.js"></script>
-		<script type="text/javascript" src="js/index.js"></script>
-                <script type="text/javascript" src="js/searchadvanced.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/rating.css" />
+            <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+            <link rel="stylesheet" type="text/css" href="css/rating.css" />
+            <link href="http://code.jquery.com/ui/1.9.0/themes/ui-darkness/jquery-ui.css" rel="stylesheet">
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.js"></script>
+            <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.min.js"></script>
+            <link href="css/keyboard.css" rel="stylesheet">
+            <script type="text/javascript" src="js/rating.js"></script>
+            <script type="text/javascript" src="js/index.js"></script>
+            <script type="text/javascript" src="js/searchadvanced.js"></script>
+            <script type="text/javascript" src="js/move_main.js"></script>
+            <script type="text/javascript" src="js/jquery.keyboard.js"></script>
         <meta charset="UTF-8">
         <title></title>
+        
+        <script>
+		$(function(){
+			$('#keyboard').keyboard();
+		});
+	</script>
+        
     </head>
     <body>
         <div id="main-container">
@@ -30,30 +42,33 @@ and open the template in the editor.
 
                                 <tr>
                                     <td>
-                                        <center><img src="images/user.png">Usuario</center>
+                                        <center>
+                                        <!--<center><img src="images/user.png">Usuario</center>-->
+                                        <a href="login.html">Iniciar Sesión</a>
+                                        </center>
                                     </td>
                                 </tr>
 
                                 <tr>
-                                    <td>
+                                    <td id="menu1" class="menu-option">
                                         <center>Top 10</center>
                                     </td>
                                 </tr>
 
                                 <tr>
-                                    <td>
+                                    <td class="menu-option">
                                         <center>Favoritos</center>
                                     </td>
                                 </tr>
 
                                 <tr>
-                                    <td>
+                                    <td class="menu-option">
                                         <center>Recientes</center>
                                     </td>
                                 </tr>
 
                                 <tr>
-                                    <td>
+                                    <td class="menu-option">
                                         <center>Categorías</center>
                                     </td>
                                 </tr>
@@ -72,7 +87,10 @@ and open the template in the editor.
                                         </td>
                                         <td>
                                             <form id="search-box" action="javascript:mostrarAvanzada()" method="get">
-                                                    <input type="text" name="q" size="40" placeholder="Buscar..." />
+                                                    <!--<input type="text" id="keyboard" name="q" size="40" placeholder="Buscar..." />-->
+                                                    <div id="wrap">
+                                                    <input id="keyboard" placeholder="Buscar..." type="text" class="ui-keyboard-input ui-widget-content ui-corner-all" aria-haspopup="true" role="textbox">
+                                                    </div>
                                             </form>
                                         </td>
                                     </tr>

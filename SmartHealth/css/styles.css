@@ -1,8 +1,8 @@
 body
 {
-	height:680px;
-	padding: 20px 10px 20px 10px;
-	width:1260px;
+	height:720px;
+/*	padding: 20px 10px 20px 10px;*/
+	width:1280px;
 }
 
 #main-container, table
@@ -20,7 +20,7 @@ body
 
 #menu-container
 {
-	background-color:gray;
+	background-color: gray;
 	height:700px;
 	width:100%;
 }
@@ -55,6 +55,7 @@ body
 #search h3
 {
 	font-size:35px;
+        color:khaki;
 
 }
 
@@ -202,13 +203,23 @@ input[type='button']:hover
 	background:orange;
 }
 
+td .menu-option
+{
+    color:khaki;
+    font-size: 20px;
+    font-weight:bold;
+    
+}
 
+td .menu-option:hover
+{
+    background-color:orange;
+    
+}
 
-
-
-
-
-
-
-
-
+a
+{
+    color: aliceblue;
+    
+    
+}
