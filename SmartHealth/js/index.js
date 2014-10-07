@@ -167,20 +167,24 @@ var categorias2={
 $(document).ready($(function () 
   {
   
+	paintRecipes(3);
+ 
+    
+  })); 
   
   
-
+  function paintRecipes(numColumns){
 	var targetdiv=$('#resultadoRecetas')
     var recetaDiv="<table>";
     for ( var i=0; i<data2.recetas.length; i++ ) {
-		if(i%3==0)	recetaDiv+='<tr>'
+		if(i%numColumns==0)	recetaDiv+='<tr>'
         recetaDiv+= '<td><div id="receta_'+i+'" class="detalle-receta">';
 		var puntuacion='<div id="star_'+i+'" class="rating">&nbsp;</div>';
 		var textoReceta='<div id=textReceta_'+i+' class="texto-detalle"><p>'+data2.recetas[i].nombre+'</p></div>';
 		var imagenReceta='<div id=imagenReceta_'+i+' class="imagen-detalle"><img src="images/'+data2.recetas[i].imagen+'" width="82 "height="76"></div>';
 		recetaDiv+=puntuacion+textoReceta+imagenReceta;
 		recetaDiv+='</div></td>';
-		if(i%3==2) recetaDiv+='</tr>'
+		if(i%numColumns==numColumns-1) recetaDiv+='</tr>'
     }
 	recetaDiv+='</table>';
 	targetdiv.html(recetaDiv);
@@ -188,5 +192,5 @@ $(document).ready($(function ()
 	for ( var i=0; i<data2.recetas.length; i++ ){
 		$('#star_'+i).rating('votar.php', {maxvalue: 5, curvalue:1, id:20});
 	}
-    
-  })); 
+  
+  }
