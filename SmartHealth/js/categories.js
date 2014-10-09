@@ -6,6 +6,6 @@ function mostrarCategories()
     $(".resultado-recetas").css("width","70%");
 	$(".resultado-recetas").css("height","70%");
 	$(".resultado-recetas").css("float","left"); 
-	$(".resultado-recetas").css("left","45px"); 
+	$(".resultado-recetas").css("left","47px"); 
 
 }
