@@ -163,8 +163,13 @@ body
 	text-align:center;
 }
 
+.visible-block{
+	display: block;
+}
 
-
+.invisible-block{
+	visibility: hidden;
+}
 
 
 

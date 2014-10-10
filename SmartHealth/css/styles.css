@@ -239,3 +239,11 @@ a
     
     
 }
+
+.visible-block{
+	display: block;
+}
+
+.invisible-block{
+	display: none;
+}
