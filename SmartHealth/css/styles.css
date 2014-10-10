@@ -1,13 +1,14 @@
 body
 {
 	height:720px;
-/*	padding: 20px 10px 20px 10px;*/
+	/*padding: 20px 10px 20px 10px;*/
+        margin:0;
 	width:1280px;
 }
 
 #main-container, table
 {
-	width:100%;
+	width:90%;
 	table-layout: fixed;
 }
 
@@ -15,7 +16,7 @@ body
 {
 	height:680px;
 	padding:0;
-	width:240px;
+	width:220px;
 }
 
 #menu-container
@@ -61,7 +62,7 @@ body
 
 #bloque-right
 {
-	width:240px;
+	width:220px;
 
 }
 
@@ -161,7 +162,7 @@ body
 	top:180px;
 	width:200px;
 	position:relative;
-	left:20px;
+	left:30px;
 	float:left;
 	display:none;
 	padding-left:20px;
@@ -194,6 +195,7 @@ body
 {
 	text-align:left;
 	padding-top:10px;
+        width:100px
 	
 }
 

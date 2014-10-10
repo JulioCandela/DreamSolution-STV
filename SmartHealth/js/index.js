@@ -8,10 +8,10 @@ var data2={
 			"nombre":"Batido de Fresa",
 			"palabras_clave":["fresa","batido","desayuno"],
 			"categorias":["1","2","5"],
-			"instrucciones":["En una batidora, combinar leche, plátano y fresas. Agregar vainilla y azúcar de manera opcional. Bator hasta obtener la consistencia deseada. Verter en vasos y servir."],
+			"instrucciones":["En una batidora, combinar leche, pl�tano y fresas. Agregar vainilla y az�car de manera opcional. Bator hasta obtener la consistencia deseada. Verter en vasos y servir."],
 			"imagen":"01_batido_fresas.jpg",
 			"video":"",
-			"evaluación":"4.5",
+			"evaluaci�n":"4.5",
 			"porciones": 2,
 			"calorias":236,
 			"num_usuarios":832,
@@ -23,10 +23,10 @@ var data2={
 			"nombre":"Langostinos Szechwan",
 			"palabras_clave":["langostinos","mariscos","szechwan"],
 			"categorias":["6"],
-			"instrucciones":["En un bowl, mezclar agua, ketchup, salsa de soya, maicena, miel, pimienta roja molida y jengibre. Dejar reservado.","Calentar aceite en una sartén grande a fuego medio-alto. Poner cebollas y ajo y cocinar por 30 segundos. Agregar los langostinos y revolver para cubrir con aceite. Agregar a la salsa y cocinar revolviendo hasta que la salsa se encuentre burbujeando y espese."],
+			"instrucciones":["En un bowl, mezclar agua, ketchup, salsa de soya, maicena, miel, pimienta roja molida y jengibre. Dejar reservado.","Calentar aceite en una sart�n grande a fuego medio-alto. Poner cebollas y ajo y cocinar por 30 segundos. Agregar los langostinos y revolver para cubrir con aceite. Agregar a la salsa y cocinar revolviendo hasta que la salsa se encuentre burbujeando y espese."],
 			"imagen":"02_langostinos_szechwan.jpg",
 			"video":"",
-			"evaluación":"4.5",
+			"evaluaci�n":"4.5",
 			"porciones": 4,
 			"calorias":142,
 			"num_usuarios":2393,
@@ -39,12 +39,12 @@ var data2={
 			"palabras_clave":["tofu","espinaca","quiche","vegetariano"],
 			"categorias":["2","5","8"],
 			"instrucciones":["Precalentar el horno a 175 grados Celcius.",
-							"En una batidora, combinar el tofu y la leche; procesar hasta que esté cremoso añadiendo más leche de ser necesario. Añadir sal y pimienta.",
+							"En una batidora, combinar el tofu y la leche; procesar hasta que est� cremoso a�adiendo m�s leche de ser necesario. A�adir sal y pimienta.",
 							"En un bowl mediano, combinar espinaca, ajo, cebolla, queso cheddar, queso suizo y la mezcla de tofu. Mezclar bien y poner en un molde de pie preparado.",
-							"Cocinar en el horno precalentado por 30 minutos o hasta que esté dorado en la superficie. Dejar reposar por 5 minutos antes de cortar."],
+							"Cocinar en el horno precalentado por 30 minutos o hasta que est� dorado en la superficie. Dejar reposar por 5 minutos antes de cortar."],
 			"imagen":"03_quiche_tofu.jpg",
 			"video":"",
-			"evaluación":"4.5",
+			"evaluaci�n":"4.5",
 			"porciones": 6,
 			"calorias":288,
 			"num_usuarios":152,
@@ -55,11 +55,11 @@ var data2={
 			"id":"04",
 			"nombre":"Ensalada de Feta y Col Rizada",
 			"palabras_clave":["feta","col","ensalada","vegetariano"],
-			"categorias":["2","3","5","7"],
-			"instrucciones":["Mezclar la col con sal en un bowl por 2 minutos. Poner vinagre sobre la col y revolver. Trozar manzana, queso feta y piñones a la col."],
+			"categorias":["2","3","5","1"],
+			"instrucciones":["Mezclar la col con sal en un bowl por 2 minutos. Poner vinagre sobre la col y revolver. Trozar manzana, queso feta y pi�ones a la col."],
 			"imagen":"04_ensalada_feta_kale.jpg",
 			"video":"",
-			"evaluación":"5",
+			"evaluaci�n":"5",
 			"porciones": 8,
 			"calorias":43,
 			"num_usuarios":832,
@@ -71,11 +71,11 @@ var data2={
 			"nombre":"Estofado de carne",
 			"palabras_clave":["carne","estofado"],
 			"categorias":["4"],
-			"instrucciones":["En una olla grande, cocinad la carne en aceite a fuego lento hasta que esté cocida. Disolver caldo en agua y verterlo en la olla. Esparcir romero, perejil y pimienta. Llevar a punto de ebullición y luego reducir la temperatura, cubrir la olla y cocer por 1 hora.",
-							"Poner papas, zanahorias, apio y cebolla dentro de la olla. Disolver maicena en 2 cucharaditas de agua fría y echar al estofado. Cubrir y dejas cocinar por 1 hora más."],
+			"instrucciones":["En una olla grande, cocinad la carne en aceite a fuego lento hasta que est� cocida. Disolver caldo en agua y verterlo en la olla. Esparcir romero, perejil y pimienta. Llevar a punto de ebullici�n y luego reducir la temperatura, cubrir la olla y cocer por 1 hora.",
+							"Poner papas, zanahorias, apio y cebolla dentro de la olla. Disolver maicena en 2 cucharaditas de agua fr�a y echar al estofado. Cubrir y dejas cocinar por 1 hora m�s."],
 			"imagen":"05_estofado.jpg",
 			"video":"",
-			"evaluación":"4.5",
+			"evaluaci�n":"4.5",
 			"porciones": 10,
 			"calorias":401,
 			"num_usuarios":1790,
@@ -84,15 +84,15 @@ var data2={
 		},
 		{
 			"id":"06",
-			"nombre":"Keke de plátano",
-			"palabras_clave":["plátano","keke"],
-			"categorias":["9"],
-			"instrucciones":["Precalentar el horno a 175 grados Celcius. Engrasar un poco una sartén de 9x5 pulgadas.",
-							"En un bowl grande, combinar la harina, el polvo de hornear y la sal. En un bowl separado, mezclar la mantequilla y el azúcar rubia. Agregar los huevos y las bananas hasta que se encuentre bien mezclado. Unir la mezcla de las bananas y harina. Poner mantequilla en la sartén preparado.",
+			"nombre":"Keke de pl�tano",
+			"palabras_clave":["pl�tano","keke"],
+			"categorias":["3"],
+			"instrucciones":["Precalentar el horno a 175 grados Celcius. Engrasar un poco una sart�n de 9x5 pulgadas.",
+							"En un bowl grande, combinar la harina, el polvo de hornear y la sal. En un bowl separado, mezclar la mantequilla y el az�car rubia. Agregar los huevos y las bananas hasta que se encuentre bien mezclado. Unir la mezcla de las bananas y harina. Poner mantequilla en la sart�n preparado.",
 							"Cocinar en el horno precalentado de 60 a 65 minutos. Dejar enfriar en el molde por 10 minutos, luego voltearlo en otro recipiente."],
 			"imagen":"06_banana_bread.jpg",
 			"video":"",
-			"evaluación":"4.5",
+			"evaluaci�n":"4.5",
 			"porciones": 8,
 			"calorias":229,
 			"num_usuarios":10506,
@@ -105,12 +105,7 @@ var data2={
 
   
 var categorias2={
-	"categorias":[
-		{
-			"id":0,
-			"nombre":"Todos",
-			"descripcion":""
-		},
+	"categorias":[ 
 		
 		{
 			"id":1,
@@ -119,42 +114,27 @@ var categorias2={
 		},
 		{
 			"id":2,
-			"nombre":"Comida saludable",
-			"descripcion":""
-		},
-		{
-			"id":3,
 			"nombre":"Entrada",
 			"descripcion":""
 		},
 		{
+			"id":3,
+			"nombre":"Fondo",
+			"descripcion":""
+		},
+		{
 			"id":4,
-			"nombre":'Carnes',
+			"nombre":'Postre',
 			"descripcion":""
 		},
 		{
 			"id":5,
-			"nombre":"Vegetariano",
+			"nombre":"Vegano",
 			"descripcion":""
 		},
 		{
 			"id":6,
-			"nombre":"Mariscos",
-			"descripcion":""
-		},
-		{
-			"id":7,
-			"nombre":"Ensaladas",
-			"descripcion":""
-		},
-		{
-			"id":8,
-			"nombre":"Quiches",
-			"descripcion":""
-		},
-		{
-			"id":9,
-			"nombre":"Postres",
+			"nombre":"Vegetariano",
 			"descripcion":""
 		}
 	]
@@ -162,12 +142,14 @@ var categorias2={
 }
 
 
+var RecipesGlobal =new Array();
 
 
 $(document).ready($(function () 
   {
-  
-	paintRecipes(3);
+  	var updatedData=busquedaRecetas(3,"");
+	alert(RecipesGlobal[0].name);
+	//paintRecipes(3);
  
      /*$(document).keydown(function(){
   		alert("hola")});*/
@@ -430,3 +412,42 @@ $(document).ready($(function ()
   	var imgDisplay= '<img id="recipeImag" src="images/02_langostinos_szechwan.jpg"/>';
   	$('#recipePhoto').html(imgDisplay);
   }	
+
+  function busquedaRecetas(column, cat)
+  {
+  try
+  {
+  
+	var data="";
+	if(cat!="")	data="id_category="+cat;
+
+    //-----------------------------------------------------------------------
+    // 2) Send a http request with AJAX http://api.jquery.com/jQuery.ajax/
+    //-----------------------------------------------------------------------
+    $.ajax({      	
+	  
+      url: 'php/getRecipes.php',                  //the script to call to get data          
+      data: data,                        //you can insert url argumnets here to pass to api.php                              //for example "id=5&parent=6"
+      dataType: 'json',                //data format    
+	  async: false,
+      success: function(data)          //on recieve of reply
+      {
+        json= JSON.parse(data);	
+		var updatedData= {
+			"recetas":json
+		};
+		
+		for(var i=0;i<updatedData.recetas.length;i++){
+			RecipesGlobal.push(updatedData.recetas[i]);
+			//alert(RecipesGlobal[i].name);
+		}
+		
+		paintRecipes(column,updatedData);
+		return updatedData;		
+      } 
+    });
+    
+  }catch(ex){
+	alert(ex.description)
+	}
+  }
