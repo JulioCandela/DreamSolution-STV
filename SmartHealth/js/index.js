@@ -161,12 +161,10 @@ var categorias2={
 
 }
 
-var dataUpdated;
-
-
 $(document).ready($(function () 
   {
-	var dataSearch=busquedaRecetas(); 
+	var updatedData=busquedaRecetas(3);
+    alert(updatedData);
     
   })); 
   
@@ -193,7 +191,11 @@ $(document).ready($(function ()
   
   }
   
-  function busquedaRecetas()
+  var json=[];
+  
+  var json2=[];
+  
+  function busquedaRecetas(column)
   {
   try
   {
@@ -206,14 +208,13 @@ $(document).ready($(function ()
       dataType: 'json',                //data format      
       success: function(data)          //on recieve of reply
       {
-        var json= JSON.parse(data);
-		dataUpdated= {
+        json= JSON.parse(data);	
+		var updatedData= {
 			"recetas":json
 		};
-		paintRecipes(3,dataUpdated);
-		return dataUpdated;
-		
-		
+		alert(updatedData.recetas[0].name+"1");
+		paintRecipes(column,updatedData);
+		return updatedData;		
       } 
     });
     
