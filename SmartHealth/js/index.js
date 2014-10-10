@@ -1,7 +1,7 @@
 //Variables Globales
 var numbuttons=4;
-
-var data2={
+/*
+var data={
 	"recetas":[
 		{
 			"id":"01",
@@ -102,7 +102,7 @@ var data2={
 	]
 
 }
-
+*/
   
 var categorias2={
 	"categorias":[ 
@@ -142,26 +142,25 @@ var categorias2={
 }
 
 
-
+  var RecipesGlobal =new Array();
 
 $(document).ready($(function () 
   {
-  
-	paintRecipes(3);
- 
+	var updatedData=busquedaRecetas(3,"");
+	alert(RecipesGlobal[0].name);
     
   })); 
   
   
-  function paintRecipes(numColumns){
-    var targetdiv=$('#resultadoRecetas')
+  function paintRecipes(numColumns, data2){
+	var targetdiv=$('#resultadoRecetas')
     var recetaDiv="<table>";
     for ( var i=0; i<data2.recetas.length; i++ ) {
 		if(i%numColumns==0)	recetaDiv+='<tr>'
         recetaDiv+= '<td><div id="receta_'+i+'" class="detalle-receta">';
 		var puntuacion='<div id="star_'+i+'" class="rating">&nbsp;</div>';
-		var textoReceta='<div id=textReceta_'+i+' class="texto-detalle"><p>'+data2.recetas[i].nombre+'</p></div>';
-		var imagenReceta='<div id=imagenReceta_'+i+' class="imagen-detalle"><img src="images/'+data2.recetas[i].imagen+'" width="82 "height="76"></div>';
+		var textoReceta='<div id=textReceta_'+i+' class="texto-detalle"><p>'+data2.recetas[i].name+'</p></div>';
+		var imagenReceta='<div id=imagenReceta_'+i+' class="imagen-detalle"><img src="data:image/jpg;base64,'+data2.recetas[i].image+'" width="82 "height="76"></div>';
 		recetaDiv+=puntuacion+textoReceta+imagenReceta;
 		recetaDiv+='</div></td>';
 		if(i%numColumns==numColumns-1) recetaDiv+='</tr>'
@@ -174,3 +173,46 @@ $(document).ready($(function ()
 	}
   
   }
+
+  function busquedaRecetas(column, cat)
+  {
+  try
+  {
+  
+	var data="";
+	if(cat!="")	data="id_category="+cat;
+
+    //-----------------------------------------------------------------------
+    // 2) Send a http request with AJAX http://api.jquery.com/jQuery.ajax/
+    //-----------------------------------------------------------------------
+    $.ajax({      	
+	  
+      url: 'php/getRecipes.php',                  //the script to call to get data          
+      data: data,                        //you can insert url argumnets here to pass to api.php                              //for example "id=5&parent=6"
+      dataType: 'json',                //data format    
+	  async: false,
+      success: function(data)          //on recieve of reply
+      {
+        json= JSON.parse(data);	
+		var updatedData= {
+			"recetas":json
+		};
+		
+		for(var i=0;i<updatedData.recetas.length;i++){
+			RecipesGlobal.push(updatedData.recetas[i]);
+			//alert(RecipesGlobal[i].name);
+		}
+		
+		paintRecipes(column,updatedData);
+		return updatedData;		
+      } 
+    });
+    
+  }catch(ex){
+	alert(ex.description)
+	}
+  }
+  
+  
+  
+  
