@@ -1,7 +1,7 @@
 //Variables Globales
 var numbuttons=4;
-/*
-var data={
+
+var data2={
 	"recetas":[
 		{
 			"id":"01",
@@ -102,7 +102,7 @@ var data={
 	]
 
 }
-*/
+
   
 var categorias2={
 	"categorias":[ 
