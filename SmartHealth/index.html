@@ -26,6 +26,11 @@ and open the template in the editor.
         <script>
 		$(function(){
 			$('#keyboard').keyboard();
+                        $(".keyboardnum").keyboard({
+                            layout:'num',
+                            restrictInput : true,
+                            preventPaste : true,
+                        });
 		});
 	</script>
         
@@ -108,45 +113,55 @@ and open the template in the editor.
                                                                 Ordenar por:
                                                         </td>
                                                         <td width="80">
-                                                                <input type="button" value="Mejor&#x00A;Valoradas"/>
+                                                                <input data-order-option="1" class="selector s1" type="button" value="Mejor&#x00A;Valoradas"/>
                                                         </td>
                                                         <td width="80">
-                                                                <input type="button" value="Recientes"/>
+                                                                <input data-order-option="2" class="selector s1" type="button" value="Recientes"/>
                                                         </td>
                                                         <td width="80">
-                                                                <input type="button" value="Tiempo de&#x00A;elaboración"/>
+                                                                <input data-order-option="3" class="selector s1" type="button" value="Tiempo de&#x00A;elaboración"/>
                                                         </td>
                                                         <td width="80">
-                                                                <input type="button" value="Dificultad"/>
+                                                                <input data-order-option="4" class="selector s1" type="button" value="Dificultad"/>
                                                         </td>
                                                 </tr>
                                                 <tr>
                                                         <td>
                                                                 Rango Calórico
                                                         </td>
-                                                        <td width="2000">
-                                                                <input type="text" placeholder="Min"/>
-                                                                <input type="text" placeholder="Max"/>
-                                                        </td>
                                                         <td>
+                                                            
+                                                                <input id="cal_min" placeholder="Min" type="text" class="keyboardnum ui-keyboard-input ui-widget-content ui-corner-all  selector s2" aria-haspopup="true" role="textbox">
+                                                            
+                                                            
+                                                                <input id="cal_max" placeholder="Max" type="text" class="keyboardnum ui-keyboard-input ui-widget-content ui-corner-all selector s2" aria-haspopup="true" role="textbox">
+                                                            
+                                                        </td>
+                                                        <td width="100">
                                                                 Categorías
                                                         </td>
                                                         <td>
                                                                 <table>
                                                                 <tr>
-                                                                        <td width="130">
-                                                                                <input type="button" value="Entradas"/>
+                                                                        <td >
+                                                                                <input data-id="1" class="selector s3" type="button" value="Bebida"/>
                                                                         </td>
                                                                         <td>
-                                                                                <input type="button" value="Postres"/>
+                                                                                <input data-id="2" class="selector s3" type="button" value="Entrada"/>
+                                                                        </td>
+                                                                        <td>
+                                                                                <input data-id="3" class="selector s3" type="button" value="Fondo"/>
                                                                         </td>
                                                                 </tr>
                                                                 <tr>
                                                                         <td>
-                                                                                <input type="button" value="Sopas"/>
+                                                                                <input data-id="4" class="selector s3" type="button" value="Postre"/>
                                                                         </td>
                                                                         <td>
-                                                                                <input type="button" value="Vegetariano"/>
+                                                                                <input data-id="5" class="selector s3" type="button" value="Vegano"/>
+                                                                        </td>
+                                                                        <td>
+                                                                                <input data-id="6" class="selector s3" type="button" value="Vegetariano"/>
                                                                         </td>
                                                                 </tr>
                                                                 </table>
