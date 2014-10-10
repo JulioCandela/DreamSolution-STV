@@ -1,6 +1,6 @@
 //Variables Globales
 var numbuttons=4;
-
+/*
 var data={
 	"recetas":[
 		{
@@ -102,7 +102,7 @@ var data={
 	]
 
 }
-
+*/
   
 var categorias2={
 	"categorias":[
@@ -161,14 +161,12 @@ var categorias2={
 
 }
 
-
+var dataUpdated;
 
 
 $(document).ready($(function () 
   {
-  
-	paintRecipes(3,data);
- 
+	var dataSearch=busquedaRecetas(); 
     
   })); 
   
@@ -180,8 +178,8 @@ $(document).ready($(function ()
 		if(i%numColumns==0)	recetaDiv+='<tr>'
         recetaDiv+= '<td><div id="receta_'+i+'" class="detalle-receta">';
 		var puntuacion='<div id="star_'+i+'" class="rating">&nbsp;</div>';
-		var textoReceta='<div id=textReceta_'+i+' class="texto-detalle"><p>'+data2.recetas[i].nombre+'</p></div>';
-		var imagenReceta='<div id=imagenReceta_'+i+' class="imagen-detalle"><img src="images/'+data2.recetas[i].imagen+'" width="82 "height="76"></div>';
+		var textoReceta='<div id=textReceta_'+i+' class="texto-detalle"><p>'+data2.recetas[i].name+'</p></div>';
+		var imagenReceta='<div id=imagenReceta_'+i+' class="imagen-detalle"><img src="data:image/jpg;base64,'+data2.recetas[i].image+'" width="82 "height="76"></div>';
 		recetaDiv+=puntuacion+textoReceta+imagenReceta;
 		recetaDiv+='</div></td>';
 		if(i%numColumns==numColumns-1) recetaDiv+='</tr>'
@@ -195,9 +193,35 @@ $(document).ready($(function ()
   
   }
   
-  function busquedaRecetas(){
-  
-  
-  
+  function busquedaRecetas()
+  {
+  try
+  {
+    //-----------------------------------------------------------------------
+    // 2) Send a http request with AJAX http://api.jquery.com/jQuery.ajax/
+    //-----------------------------------------------------------------------
+    $.ajax({                                      
+      url: 'php/getRecipes.php',                  //the script to call to get data          
+      data: "",                        //you can insert url argumnets here to pass to api.php                              //for example "id=5&parent=6"
+      dataType: 'json',                //data format      
+      success: function(data)          //on recieve of reply
+      {
+        var json= JSON.parse(data);
+		dataUpdated= {
+			"recetas":json
+		};
+		paintRecipes(3,dataUpdated);
+		return dataUpdated;
+		
+		
+      } 
+    });
+    
+  }catch(ex){
+	alert(ex.description)
+	}
   }
+  
+  
+  
   
