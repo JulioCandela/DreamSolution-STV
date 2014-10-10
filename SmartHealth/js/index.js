@@ -161,10 +161,13 @@ var categorias2={
 
 }
 
+
+  var RecipesGlobal =new Array();
+
 $(document).ready($(function () 
   {
-	var updatedData=busquedaRecetas(3);
-    alert(updatedData);
+	var updatedData=busquedaRecetas(3,"");
+	alert(RecipesGlobal[0].name);
     
   })); 
   
@@ -190,29 +193,36 @@ $(document).ready($(function ()
 	}
   
   }
-  
-  var json=[];
-  
-  var json2=[];
-  
-  function busquedaRecetas(column)
+
+  function busquedaRecetas(column, cat)
   {
   try
   {
+  
+	var data="";
+	if(cat!="")	data="id_category="+cat;
+
     //-----------------------------------------------------------------------
     // 2) Send a http request with AJAX http://api.jquery.com/jQuery.ajax/
     //-----------------------------------------------------------------------
-    $.ajax({                                      
+    $.ajax({      	
+	  
       url: 'php/getRecipes.php',                  //the script to call to get data          
-      data: "",                        //you can insert url argumnets here to pass to api.php                              //for example "id=5&parent=6"
-      dataType: 'json',                //data format      
+      data: data,                        //you can insert url argumnets here to pass to api.php                              //for example "id=5&parent=6"
+      dataType: 'json',                //data format    
+	  async: false,
       success: function(data)          //on recieve of reply
       {
         json= JSON.parse(data);	
 		var updatedData= {
 			"recetas":json
 		};
-		alert(updatedData.recetas[0].name+"1");
+		
+		for(var i=0;i<updatedData.recetas.length;i++){
+			RecipesGlobal.push(updatedData.recetas[i]);
+			//alert(RecipesGlobal[i].name);
+		}
+		
 		paintRecipes(column,updatedData);
 		return updatedData;		
       } 
