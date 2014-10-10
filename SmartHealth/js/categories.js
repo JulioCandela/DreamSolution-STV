@@ -1,6 +1,6 @@
 function mostrarCategories()
 {
-	paintRecipes(2);
+	paintRecipes(2,data);
 	$("#categorias-menu").show();
     $("#search-advanced").hide();
     $(".resultado-recetas").css("width","70%");

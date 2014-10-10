@@ -1,7 +1,7 @@
 //Variables Globales
 var numbuttons=4;
 
-var data2={
+var data={
 	"recetas":[
 		{
 			"id":"01",
@@ -167,13 +167,13 @@ var categorias2={
 $(document).ready($(function () 
   {
   
-	paintRecipes(3);
+	paintRecipes(3,data);
  
     
   })); 
   
   
-  function paintRecipes(numColumns){
+  function paintRecipes(numColumns, data2){
 	var targetdiv=$('#resultadoRecetas')
     var recetaDiv="<table>";
     for ( var i=0; i<data2.recetas.length; i++ ) {
@@ -194,3 +194,10 @@ $(document).ready($(function ()
 	}
   
   }
+  
+  function busquedaRecetas(){
+  
+  
+  
+  }
+  
