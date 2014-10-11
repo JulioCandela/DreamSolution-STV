@@ -148,14 +148,14 @@ var RecipesGlobal =new Array();
 $(document).ready($(function () 
   {
   	var updatedData=busquedaRecetas(3,"");
-	alert(RecipesGlobal[0].name);
+	//alert(RecipesGlobal[0].name);
 	//paintRecipes(3);
  
      /*$(document).keydown(function(){
   		alert("hola")});*/
 	$('.detalle-receta').mousedown(function(){
 		var id = $(this).attr("id_receta");
-  		selectRecipe(id)});
+		getDetails(parseInt(id) + 2)});
 
 	$('#volverBtn').click(function(){
   		$('#recipe-details').addClass("invisible-block");  		
@@ -208,127 +208,26 @@ $(document).ready($(function ()
   
   }
 
-  var exampleRecipe = {
-    "name":"Langostinos Szechwan",
-    "keyword":"langostinos, mariscos, szechwan",
-    "rating":"4",
-    "raters":"2393",
-    "calories":"142",
-    "time":"20",
-    "difficulty":"3",
-    "fat":"4.4",
-    "carbohydrate":"6.7",
-    "fiber":"0.4",
-    "proteins":"18.3",
-    "cholesterol":"0.164",
-    "sodium":"0.5",
-    "created_at":"2014-10-08 12:16:03",
-    "hits":"0",
-    "categories":[
-      {
-        "id":"14",
-        "name":"Mariscos"
-      }
-    ],
-    "instructions":[
-      "En un bowl, mezclar agua, ketchup, salsa de soya, maicena, miel, pimienta roja molida y jengibre. Dejar reservado.",
-      "Calentar aceite en una sartén grande a fuego medio-alto. Poner cebollas y ajo y cocinar por 30 segundos. Agregar los langostinos y revolver para cubrir con aceite. Agregar a la salsa y cocinar revolviendo hasta que la salsa se encuentre burbujeando y espese."
-    ],
-    "ingredients":[
-      {
-        "id":"6",
-        "name":"agua",
-        "unit":"cucharada",
-        "quantity":"4",
-        "description":"NULL"
-      },
-      {
-        "id":"7",
-        "name":"ketchup",
-        "unit":"cucharada",
-        "quantity":"2",
-        "description":"NULL"
-      },
-      {
-        "id":"8",
-        "name":"salsa de soya",
-        "unit":"cucharada",
-        "quantity":"1",
-        "description":"NULL"
-      },
-      {
-        "id":"9",
-        "name":"maicena",
-        "unit":"cucharadita",
-        "quantity":"2",
-        "description":"NULL"
-      },
-      {
-        "id":"10",
-        "name":"miel",
-        "unit":"cucharadita",
-        "quantity":"1",
-        "description":"NULL"
-      },
-      {
-        "id":"11",
-        "name":"pimienta roja",
-        "unit":"cucharadita",
-        "quantity":"0.5",
-        "description":"NULL"
-      },
-      {
-        "id":"12",
-        "name":"jenjibre",
-        "unit":"cucharadita",
-        "quantity":"0.25",
-        "description":"NULL"
-      },
-      {
-        "id":"13",
-        "name":"aceite vegetal",
-        "unit":"cucharada",
-        "quantity":"1",
-        "description":"NULL"
-      },
-      {
-        "id":"14",
-        "name":"cebolla verde",
-        "unit":"taza",
-        "quantity":"0.25",
-        "description":"cortada"
-      },
-      {
-        "id":"15",
-        "name":"diente de ajo",
-        "unit":"unidad",
-        "quantity":"4",
-        "description":"troceado"
-      },
-      {
-        "id":"16",
-        "name":"langostino",
-        "unit":"gramos",
-        "quantity":"340",
-        "description":"cocinado, sin cola"
-      }
-    ]
-  };
+  var selectedRecipe;
 
   var currentInstructions;
 
-  function selectRecipe(recipeId){
-  	//alert(recipeId);
-  	fillRecipeDetails(exampleRecipe);
+  function selectRecipe(json){
+  	//alert(json[0].name);
+  	fillRecipeDetails(json[0]);
   	$('#recipe-details').removeClass("invisible-block");
   	
-  	currentInstructions = exampleRecipe.instructions;
+  	currentInstructions = json[0].instructions;
   	text = "";
   	for (var i = 0; i < currentInstructions.length; i++) {
   		text += currentInstructions[i];
   	};
 
-  	var soapMessage =
+  	//selectedRecipe = getDetails(3);
+  	//alert(selectedRecipe);
+  	//alert(selectedRecipe.name);
+
+  	/*var soapMessage =
     '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sexy="http://www.dreamsolutions.com/sexy_service/">' +
    		'<soapenv:Header/>' +
    			'<soapenv:Body>' +
@@ -346,12 +245,12 @@ $(document).ready($(function ()
     	data: soapMessage,
     	success: function(soapResponse){
         	//DO SOMETHING
-        	alert("OK");
+        	//alert("OK");
         	//alert(soapResponse);
         }
         //error: alert("error")
         
-    });
+    });*/
 	
 
 	/*$.soap({
@@ -376,6 +275,13 @@ $(document).ready($(function ()
   	
   	//ingredientes
   	var ingredientes = details.ingredients;
+  	var headerDisplay = '<tr>' +
+  							'<th>Ingrediente</th>' +
+                            '<th>Unidad de Medida</th>' +      
+                            '<th>Cantidad</th>' +
+                        '</tr> '; 
+  	$('#ingredientsTable').empty();
+  	$('#ingredientsTable').append(headerDisplay);
   	var rowDisplay;
   	for (var i = 0; i < ingredientes.length; i++) {
   		rowDisplay = '<tr> <td class="ingredientCell">' + ingredientes[i].name + '</td> <td class="umCell">' + 
@@ -409,7 +315,8 @@ $(document).ready($(function ()
   	$('#infoNutricional').html(nutriDisplay);
 
   	// imagen (provisional)
-  	var imgDisplay= '<img id="recipeImag" src="images/02_langostinos_szechwan.jpg"/>';
+  	var image = details.image;
+  	var imgDisplay= '<img id="recipeImag" src="data:image/jpg;base64, ' + image + '"/>';
   	$('#recipePhoto').html(imgDisplay);
   }	
 
@@ -444,6 +351,34 @@ $(document).ready($(function ()
 		
 		paintRecipes(column,updatedData);
 		return updatedData;		
+      } 
+    });
+    
+  }catch(ex){
+	alert(ex.description)
+	}
+  }
+
+  function getDetails(id_recipe)
+  {
+  try
+  {
+  
+	var data="id_recipe=" + id_recipe;
+
+    //-----------------------------------------------------------------------
+    // 2) Send a http request with AJAX http://api.jquery.com/jQuery.ajax/
+    //-----------------------------------------------------------------------
+    $.ajax({      	
+	  
+      url: 'php/selectRecipe.php',                  //the script to call to get data          
+      data: data,                        //you can insert url argumnets here to pass to api.php                              //for example "id=5&parent=6"
+      dataType: 'json',                //data format    
+	  async: false,
+      success: function(response)          //on recieve of reply
+      {
+        json= JSON.parse(response);	
+        selectRecipe(json);        
       } 
     });
     
