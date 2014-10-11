@@ -1,14 +1,13 @@
 body
 {
-	height:720px;
-	/*padding: 20px 10px 20px 10px;*/
-        margin:0;
-	width:1280px;
+	height:680px;
+	padding: 20px 10px 20px 10px;
+	width:1260px;
 }
 
 #main-container, table
 {
-	width:90%;
+	width:100%;
 	table-layout: fixed;
 }
 
@@ -16,12 +15,12 @@ body
 {
 	height:680px;
 	padding:0;
-	width:220px;
+	width:240px;
 }
 
 #menu-container
 {
-	background-color: gray;
+	background-color:gray;
 	height:700px;
 	width:100%;
 }
@@ -56,13 +55,12 @@ body
 #search h3
 {
 	font-size:35px;
-        color:khaki;
 
 }
 
 #bloque-right
 {
-	width:220px;
+	width:240px;
 
 }
 
@@ -99,10 +97,6 @@ body
 	-moz-transition: all 0.7s ease 0s; 
 	-o-transition: all 0.7s ease 0s;
 	transition: all 0.7s ease 0s; 
-}
-
-.result{
-
 }
 
 .detalle-receta
@@ -147,28 +141,16 @@ body
 	width:95%;
 	overflow-y:scroll;
 	position:relative;
-	top:160px;
+	top:180px;
 	left:20px;
 
 }
+
 .resultado-recetas table
 {
 	border-spacing:15px;
 
 }
-
-#categorias-menu 
-{
-	top:180px;
-	width:200px;
-	position:relative;
-	left:30px;
-	float:left;
-	display:none;
-	padding-left:20px;
-}
-
-
 
 #sugerencias-container table
 {
@@ -181,71 +163,17 @@ body
 	text-align:center;
 }
 
-#search-advanced
-{
-	border: 1px solid white;
-	top:170px;
-	position:relative;
-	margin:auto auto 50px auto;
-	width:90%;
-	display:none;
-}
-
-#search-advanced td
-{
-	text-align:left;
-	padding-top:10px;
-        width:100px
-	
-}
-
-#search-advanced td input[type='text']
-{
-	width:40px;
-}
-
-input[type='button']
-{
-	width:100px;
-	height:40px;
-	text-align:center;
-	vertical-align:middle;
-	-webkit-border-radius: 10px; 
-	-moz-border-radius: 10px;
-	border-radius: 10px;
-	border: 0 none; 
-}
-
-input[type='button']:hover
-{
-	background:orange;
-}
-
-td .menu-option
-{
-    color:khaki;
-    font-size: 20px;
-    font-weight:bold;
-    
-}
-
-td .menu-option:hover
-{
-    background-color:orange;
-    
-}
-
-a
-{
-    color: aliceblue;
-    
-    
-}
-
 .visible-block{
 	display: block;
 }
 
 .invisible-block{
-	display: none;
+	visibility: hidden;
 }
+
+
+
+
+
+
+

@@ -1,0 +1,257 @@
+body {
+  background-color: #ADADAD;
+  font: 400 1em/1.38 Helvetica;
+  color: rgb(50, 50, 50);
+}
+
+.container {
+  float: left;
+  background-color: #EBEBEB;
+}
+
+.embed-wrapper {
+  float: left;
+  overflow: hidden;
+}
+
+._button {
+  display: block;
+  float: left;
+  height: 28px;
+  margin-top: 12px;
+  border-radius: 3px;
+  background-color: rgb(222, 222, 222);
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.38;
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+
+._element {
+  clear: both;
+  width: 800px;
+  height: 160px;
+  /*background-color: rgb(199, 195, 101);*/
+}
+
+#topContainer {
+  width: 800px;
+  height: 50px;
+  /*background-color: rgb(223, 135, 135);*/
+}
+
+#ingredientesContainer {
+  position: relative;
+  clear: both;
+  z-index: 2;
+  width: 500px;
+  height: 210px;
+  /*background-color: rgb(160, 210, 183);*/
+}
+
+#photoContainer {
+  position: relative;
+  z-index: 13;
+  width: 300px;
+  height: 210px;
+  /*background-color: rgb(212, 236, 154);*/
+}
+
+#instructionsContainer {
+  clear: both;
+  width: 800px;
+  height: 280px;
+  font-size: 14px;
+  /*background-color: rgb(114, 117, 167);*/
+}
+
+#recipeTitle {
+  font-size: 24px;
+  height: 30px;
+  margin: 10px 0 0 10px;
+  width: 400px;
+}
+
+#ingredientesDiv {
+  clear: both;
+  font-size: 14px;
+  height: 161px;
+  margin: 8px 0 0 10px;
+  overflow-y: scroll;
+  width: 480px;
+}
+
+#recipePhoto {
+  width: 280px;
+  height: 190px;
+  margin: 10px 0 0 10px;
+}
+
+#preparationDiv {
+  width: 61.25%;
+  height: 259px;
+  margin: 10px 0 0 10px;
+}
+
+#dificultad {
+  position: relative;
+  z-index: 8;
+  width: 35.25%;
+  height: 33px;
+  margin: 10px 0 0 1.125%;
+}
+
+#duracion {
+  position: relative;
+  clear: both;
+  z-index: 9;
+  width: 35.25%;
+  height: 33px;
+  margin: -215px 0 0 63.59961%;
+}
+
+#infoNutricional {
+  position: relative;
+  z-index: 6;
+  width: 35.125%;
+  height: 166px;
+  margin: -167px 0 0 63.625%;
+}
+
+#volverBtn {
+  margin-left: 10px;
+  width: 100px;
+  height: 35px;
+  
+}
+
+#favoritosBtn {
+  float: right;
+  height: 35px;
+  margin-right: 10px;
+  width: 100px;
+}
+
+#voicePlayBtn{
+  float: right;
+  margin-right: 10px;
+}
+
+#ingredientsTable{
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+#ingredientsTable th{
+  /*font-weight: normal;
+  /*border: 1px solid black;
+  border-collapse: collapse;*/
+}
+
+#ingredientsTable td{
+  text-align: center;
+  /*border: 1px solid black;
+  border-collapse: collapse;*/
+}
+
+/*#ingredientsTable .umCell{
+  text-align: center;
+}
+
+#ingredientsTable .quantityCell{
+  text-align: center;
+}*/
+
+.fluid-span-1 {
+  width: 6.5%;
+}
+
+.fluid-span-2 {
+  width: 15%;
+}
+
+.fluid-span-3 {
+  width: 23.5%;
+}
+
+.fluid-span-4 {
+  width: 32%;
+}
+
+.fluid-span-5 {
+  width: 40.5%;
+}
+
+.fluid-span-6 {
+  width: 49%;
+}
+
+.fluid-span-7 {
+  width: 57.5%;
+}
+
+.fluid-span-8 {
+  width: 66%;
+}
+
+.fluid-span-9 {
+  width: 74.5%;
+}
+
+.fluid-span-10 {
+  width: 83%;
+}
+
+.fluid-span-11 {
+  width: 91.5%;
+}
+
+.fluid-span-12 {
+  width: 100%;
+}
+
+.fluid-offset-1 {
+  margin-left: 8.5%;
+}
+
+.fluid-offset-2 {
+  margin-left: 17%;
+}
+
+.fluid-offset-3 {
+  margin-left: 25.5%;
+}
+
+.fluid-offset-4 {
+  margin-left: 34%;
+}
+
+.fluid-offset-5 {
+  margin-left: 42.5%;
+}
+
+.fluid-offset-6 {
+  margin-left: 51%;
+}
+
+.fluid-offset-7 {
+  margin-left: 59.5%;
+}
+
+.fluid-offset-8 {
+  margin-left: 68%;
+}
+
+.fluid-offset-9 {
+  margin-left: 76.5%;
+}
+
+.fluid-offset-10 {
+  margin-left: 85%;
+}
+
+.fluid-offset-11 {
+  margin-left: 93.5%;
+}
+

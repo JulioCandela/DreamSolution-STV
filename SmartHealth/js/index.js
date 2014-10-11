@@ -1,7 +1,7 @@
 //Variables Globales
 var numbuttons=4;
-/*
-var data={
+
+var data2={
 	"recetas":[
 		{
 			"id":"01",
@@ -102,7 +102,7 @@ var data={
 	]
 
 }
-*/
+
   
 var categorias2={
 	"categorias":[ 
@@ -142,25 +142,59 @@ var categorias2={
 }
 
 
-  var RecipesGlobal =new Array();
+var RecipesGlobal =new Array();
+
 
 $(document).ready($(function () 
   {
-	var updatedData=busquedaRecetas(3,"");
+  	var updatedData=busquedaRecetas(3,"");
 	alert(RecipesGlobal[0].name);
-    
+	//paintRecipes(3);
+ 
+     /*$(document).keydown(function(){
+  		alert("hola")});*/
+	$('.detalle-receta').mousedown(function(){
+		var id = $(this).attr("id_receta");
+  		selectRecipe(id)});
+
+	$('#volverBtn').click(function(){
+  		$('#recipe-details').addClass("invisible-block");  		
+    });
+
+    $('#favoritosBtn').click(function(){
+  		alert("Adicionar a favoritos!"); 		
+    });  
+
+    $('#voicePlayBtn').click(function(){
+    	var audio = new Audio();
+    	var playText = text.substring(0,99);
+    	audio.src ='http://translate.google.com/translate_tts?ie=utf-8&tl=es&q=' + encodeURI(playText);
+		audio.play();
+    	/*for (var i = 0; i <= text.length / 100;i++) {
+    		playText = text.substring(i*100,i*100+99);
+    		alert(playText);
+    		audio.src ='http://translate.google.com/translate_tts?ie=utf-8&tl=es&q=' + encodeURI("hola" + i);
+			audio.play();
+			sleep(2000,alert());
+    	};*/
+    	
+    });
+
   })); 
   
-  
-  function paintRecipes(numColumns, data2){
+  function sleep(millis, callback) {
+    setTimeout(function() { callback(); }, millis);
+  }
+
+  function paintRecipes(numColumns){
 	var targetdiv=$('#resultadoRecetas')
     var recetaDiv="<table>";
     for ( var i=0; i<data2.recetas.length; i++ ) {
 		if(i%numColumns==0)	recetaDiv+='<tr>'
-        recetaDiv+= '<td><div id="receta_'+i+'" class="detalle-receta">';
+        recetaDiv+= '<td><div id="receta_'+i+'" class="detalle-receta" id_receta='+i+'>';
 		var puntuacion='<div id="star_'+i+'" class="rating">&nbsp;</div>';
-		var textoReceta='<div id=textReceta_'+i+' class="texto-detalle"><p>'+data2.recetas[i].name+'</p></div>';
-		var imagenReceta='<div id=imagenReceta_'+i+' class="imagen-detalle"><img src="data:image/jpg;base64,'+data2.recetas[i].image+'" width="82 "height="76"></div>';
+		var textoReceta='<div id=textReceta_'+i+' class="texto-detalle"><p>'+data2.recetas[i].nombre+'</p></div>';
+		var imagenReceta='<div id=imagenReceta_'+i+' class="imagen-detalle"><img src="images/'+data2.recetas[i].imagen+'" width="82 "height="76"></div>';
 		recetaDiv+=puntuacion+textoReceta+imagenReceta;
 		recetaDiv+='</div></td>';
 		if(i%numColumns==numColumns-1) recetaDiv+='</tr>'
@@ -173,6 +207,211 @@ $(document).ready($(function ()
 	}
   
   }
+
+  var exampleRecipe = {
+    "name":"Langostinos Szechwan",
+    "keyword":"langostinos, mariscos, szechwan",
+    "rating":"4",
+    "raters":"2393",
+    "calories":"142",
+    "time":"20",
+    "difficulty":"3",
+    "fat":"4.4",
+    "carbohydrate":"6.7",
+    "fiber":"0.4",
+    "proteins":"18.3",
+    "cholesterol":"0.164",
+    "sodium":"0.5",
+    "created_at":"2014-10-08 12:16:03",
+    "hits":"0",
+    "categories":[
+      {
+        "id":"14",
+        "name":"Mariscos"
+      }
+    ],
+    "instructions":[
+      "En un bowl, mezclar agua, ketchup, salsa de soya, maicena, miel, pimienta roja molida y jengibre. Dejar reservado.",
+      "Calentar aceite en una sartén grande a fuego medio-alto. Poner cebollas y ajo y cocinar por 30 segundos. Agregar los langostinos y revolver para cubrir con aceite. Agregar a la salsa y cocinar revolviendo hasta que la salsa se encuentre burbujeando y espese."
+    ],
+    "ingredients":[
+      {
+        "id":"6",
+        "name":"agua",
+        "unit":"cucharada",
+        "quantity":"4",
+        "description":"NULL"
+      },
+      {
+        "id":"7",
+        "name":"ketchup",
+        "unit":"cucharada",
+        "quantity":"2",
+        "description":"NULL"
+      },
+      {
+        "id":"8",
+        "name":"salsa de soya",
+        "unit":"cucharada",
+        "quantity":"1",
+        "description":"NULL"
+      },
+      {
+        "id":"9",
+        "name":"maicena",
+        "unit":"cucharadita",
+        "quantity":"2",
+        "description":"NULL"
+      },
+      {
+        "id":"10",
+        "name":"miel",
+        "unit":"cucharadita",
+        "quantity":"1",
+        "description":"NULL"
+      },
+      {
+        "id":"11",
+        "name":"pimienta roja",
+        "unit":"cucharadita",
+        "quantity":"0.5",
+        "description":"NULL"
+      },
+      {
+        "id":"12",
+        "name":"jenjibre",
+        "unit":"cucharadita",
+        "quantity":"0.25",
+        "description":"NULL"
+      },
+      {
+        "id":"13",
+        "name":"aceite vegetal",
+        "unit":"cucharada",
+        "quantity":"1",
+        "description":"NULL"
+      },
+      {
+        "id":"14",
+        "name":"cebolla verde",
+        "unit":"taza",
+        "quantity":"0.25",
+        "description":"cortada"
+      },
+      {
+        "id":"15",
+        "name":"diente de ajo",
+        "unit":"unidad",
+        "quantity":"4",
+        "description":"troceado"
+      },
+      {
+        "id":"16",
+        "name":"langostino",
+        "unit":"gramos",
+        "quantity":"340",
+        "description":"cocinado, sin cola"
+      }
+    ]
+  };
+
+  var currentInstructions;
+
+  function selectRecipe(recipeId){
+  	//alert(recipeId);
+  	fillRecipeDetails(exampleRecipe);
+  	$('#recipe-details').removeClass("invisible-block");
+  	
+  	currentInstructions = exampleRecipe.instructions;
+  	text = "";
+  	for (var i = 0; i < currentInstructions.length; i++) {
+  		text += currentInstructions[i];
+  	};
+
+  	var soapMessage =
+    '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sexy="http://www.dreamsolutions.com/sexy_service/">' +
+   		'<soapenv:Header/>' +
+   			'<soapenv:Body>' +
+      			'<sexy:id_recipe>3</sexy:id_recipe>' +
+   			'</soapenv:Body>' +
+	'</soapenv:Envelope>';
+
+    $.ajax({
+    	url: "http://200.16.7.111/wordpress/index.php?/wpws/?wsdl",
+    	type: "POST",
+    	contentType: 'text/xml; charset=utf-8',
+    	headers: {
+        	SOAPAction: "http://www.dreamsolutions.com/sexy_service/smartSelectRecipeService"
+    	},
+    	data: soapMessage,
+    	success: function(soapResponse){
+        	//DO SOMETHING
+        	alert("OK");
+        	//alert(soapResponse);
+        }
+        //error: alert("error")
+        
+    });
+	
+
+	/*$.soap({
+    	url: 'http://200.16.7.111/wordpress/index.php?/wpws/?wsdl',
+    	method: 'http://www.dreamsolutions.com/sexy_service/smartSelectRecipeService',
+    	data: {
+        	id_recipe: '2'
+    	},
+    	success: function (soapResponse) {
+    		alert(soapResponse);
+        // do stuff with soapResponse
+    	},
+    	error: function (soapResponse) {
+        	alert('that other server might be down...');
+    	}
+	});*/
+  	//alert("end");
+  }
+
+  function fillRecipeDetails(details){
+  	$('#recipeTitle').html(details.name);
+  	
+  	//ingredientes
+  	var ingredientes = details.ingredients;
+  	var rowDisplay;
+  	for (var i = 0; i < ingredientes.length; i++) {
+  		rowDisplay = '<tr> <td class="ingredientCell">' + ingredientes[i].name + '</td> <td class="umCell">' + 
+  		ingredientes[i].unit + '</td> <td class="quantityCell">' + ingredientes[i].quantity + '</td> </tr>';
+  		$('#ingredientsTable').append(rowDisplay);
+  	}
+  	
+  	//instrucciones
+  	var instrucciones = details.instructions;
+  	var pasosDisplay = "Instrucciones: <br/>";
+  	for (var i = 0; i < instrucciones.length; i++) {
+  		pasosDisplay += "<br/>" + (i + 1) + ". " + instrucciones[i] +" <br/>";
+  	}
+  	$('#preparationDiv').html(pasosDisplay);
+
+  	// dificultad
+  	$('#dificultad').html("Dificultad: " + details.difficulty);
+  	
+  	// tiempo
+  	$('#duracion').html("Tiempo de preparación: " + details.time + " minutos");
+  	
+  	// informacion nutricional
+  	var nutriDisplay = "Información nutricional: <br/>";
+  	nutriDisplay += "Calorías: " + details.calories + " kcal <br/>";
+  	nutriDisplay += "Colesterol: " + details.cholesterol + " g <br/>";
+  	nutriDisplay += "Fibra: " + details.fiber + " g <br/>";
+  	nutriDisplay += "Sodio: " + details.sodium + " g <br/>";
+  	nutriDisplay += "Carbohidratos: " + details.carbohydrate + " g <br/>";
+  	nutriDisplay += "Grasas: " + details.fat + " g <br/>";
+  	nutriDisplay += "Proteinas: " + details.proteins + " g <br/>";
+  	$('#infoNutricional').html(nutriDisplay);
+
+  	// imagen (provisional)
+  	var imgDisplay= '<img id="recipeImag" src="images/02_langostinos_szechwan.jpg"/>';
+  	$('#recipePhoto').html(imgDisplay);
+  }	
 
   function busquedaRecetas(column, cat)
   {
@@ -212,7 +451,3 @@ $(document).ready($(function ()
 	alert(ex.description)
 	}
   }
-  
-  
-  
-  
